@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+   xmlns:app="http://schemas.android.com/apk/res/com.doyouspeak"
+   android:layout_width="fill_parent"
+   android:layout_height="wrap_content"
+   android:orientation="vertical"
+   android:background="@color/background_color"
+   xmlns:android="http://schemas.android.com/apk/res/android">
+   <com.markupartist.android.widget.ActionBar
+	    android:id="@+id/actionbar"
+	    app:title="@string/app_name"
+	    style="@style/ActionBar"
+        />
+
+   
+    
+</LinearLayout>

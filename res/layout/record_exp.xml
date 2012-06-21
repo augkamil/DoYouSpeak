@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res/com.doyouspeak"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/background_color"
+    android:orientation="vertical" >
+
+    <com.markupartist.android.widget.ActionBar
+	    android:id="@+id/actionbar"
+	    app:title="@string/app_name"
+	    style="@style/ActionBar"
+        />
+
+    <TableRow
+        android:id="@+id/tableRow0"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent" android:gravity="center"
+        >
+
+        <ImageView
+            android:id="@+id/previous_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/previous_text"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_previous" 
+            />
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		    android:layout_width="wrap_content"
+    		android:layout_height="fill_parent"
+    		android:background="@color/background_color"
+    		android:orientation="vertical" 
+    		android:layout_gravity="center"
+    		>
+    		
+    		<TableRow
+        		android:id="@+id/tableRow1"
+        		android:layout_width="match_parent"
+        		android:layout_height="fill_parent" 
+        		android:gravity="center"
+        		>
+        		<ImageView
+	                android:id="@+id/star_on_img"
+	                android:layout_width="fill_parent"
+	                android:layout_height="fill_parent"
+	                android:scaleType="center"
+	                android:src="@drawable/ic_star_on" 
+               	 	/>
+            	<TextView
+	       			android:id="@+id/expression_text"
+	       			android:layout_width="fill_parent"
+	       			android:layout_height="wrap_content"
+	       			android:gravity="center"
+	       			android:textColor="@android:color/black" 
+	       			android:text="@string/expression_text"
+	       			/>
+            </TableRow>
+            
+			<TableRow
+        		android:id="@+id/tableRow2"
+        		android:layout_width="match_parent"
+        		android:layout_height="fill_parent" android:gravity="center"
+        		>
+	            <TextView
+	       			android:id="@+id/listen_text"
+	       			android:layout_width="fill_parent"
+	       			android:layout_height="wrap_content"
+	       			android:gravity="center"
+	       			android:textColor="@android:color/black" 
+	       			android:text="@string/listen_text"
+	       			/>
+	            
+	            <ImageView
+	                android:id="@+id/details2_img"
+	                android:layout_width="fill_parent"
+	                android:layout_height="fill_parent"
+	                android:scaleType="center"
+	                android:src="@drawable/ic_record" 
+	                android:text="@string/record_text"
+	                />
+			</TableRow>
+			
+			<TableRow
+        		android:id="@+id/tableRow3"
+        		android:layout_width="match_parent"
+        		android:layout_height="fill_parent" android:gravity="center"
+        		>
+	            <TextView
+	       			android:id="@+id/record_text"
+	       			android:layout_width="fill_parent"
+	       			android:layout_height="wrap_content"
+	       			android:gravity="center"
+	       			android:textColor="@android:color/black" 
+	       			android:text="@string/record_text"
+	       			/>
+	            
+	            <ImageView
+	                android:id="@+id/record_img"
+	                android:layout_width="fill_parent"
+	                android:layout_height="fill_parent"
+	                android:scaleType="center"
+	                android:src="@drawable/ic_record" 
+	                />
+			</TableRow>
+			
+            <TableRow
+        		android:id="@+id/tableRow4"
+        		android:layout_width="match_parent"
+        		android:layout_height="fill_parent" android:gravity="center"
+        	>
+            <TextView
+       			android:id="@+id/record_history_text"
+       			android:layout_width="fill_parent"
+       			android:layout_height="wrap_content"
+       			android:gravity="center"
+        			android:textColor="@android:color/black" 
+       			android:text="@string/record_history_text"
+       			/>
+			</TableRow>
+        	
+            <TableRow
+        		android:id="@+id/tableRow5"
+        		android:layout_width="match_parent"
+        		android:layout_height="fill_parent" android:gravity="center"
+        	>        
+            <ImageView
+                android:id="@+id/history1_img"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:scaleType="center"
+                android:src="@drawable/ic_play" 
+                />
+            <ImageView
+                android:id="@+id/history2_img"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:scaleType="center"
+                android:src="@drawable/ic_play" 
+                />
+            <ImageView
+                android:id="@+id/history3_img"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:scaleType="center"
+                android:src="@drawable/ic_play" 
+                />
+			</TableRow>
+        	 
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/next_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/next_text"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_next"
+            />
+        
+    </TableRow>
+    
+</LinearLayout>

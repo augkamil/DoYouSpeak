@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello?</string>
+    <string name="app_name">Do You Speak?</string>
+    <string name="localization">Lokalizacja</string>
+    <string name="expressions">Zwroty</string>
+    <string name="my_list">Moja Lista</string>
+    <string name="reminder">Przypomnienia</string>
+    <string name="add_expression">Dodaj Zwrot</string>
+    <string name="home">Strona Główna</string>
+    <string name="record">Nagrywanie</string>
+    <string name="details">Szczegóły</string>
+    <string name="star_on">Usuń z listy</string>
+    <string name="star_off">Dodaj do swojej listy</string>
+    <string name="my_localization">Moja lokalizacja</string>
+    <string name="chose_localization">Wybierz Lokalizację</string>
+    <string name="writing_localization">Kraj, region</string>
+    <string name="expressionCategory">Kategoria</string>
+    <string name="record_text">Nagraj Siebie</string>
+    <string name="record_play">Sprawdź nagranie</string>
+    <string name="choose_category">Wybierz kategorię</string>
+    <string name="accept_button">Zaakceptuj</string>
+    <string name="next_text">Następny</string>
+    <string name="previous_text">Poprzedni</string>
+    <string name="expression_text">Mogę zapłacić kartą?</string>
+    <string name="listen_text">Posłuchaj</string>
+    <string name="record_history_text">Odtwórz Swoje nagrania:</string>
+
+</resources>
