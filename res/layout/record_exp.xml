@@ -4,7 +4,8 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:background="@color/background_color"
-    android:orientation="vertical" >
+    android:orientation="vertical" 
+    >
 
     <com.markupartist.android.widget.ActionBar
 	    android:id="@+id/actionbar"
@@ -41,6 +42,7 @@
         		android:layout_height="fill_parent" 
         		android:gravity="center"
         		>
+        		
         		<ImageView
 	                android:id="@+id/star_on_img"
 	                android:layout_width="fill_parent"
@@ -48,6 +50,7 @@
 	                android:scaleType="center"
 	                android:src="@drawable/ic_star_on" 
                	 	/>
+        		
             	<TextView
 	       			android:id="@+id/expression_text"
 	       			android:layout_width="fill_parent"
@@ -56,6 +59,7 @@
 	       			android:textColor="@android:color/black" 
 	       			android:text="@string/expression_text"
 	       			/>
+            	
             </TableRow>
             
 			<TableRow
@@ -63,6 +67,7 @@
         		android:layout_width="match_parent"
         		android:layout_height="fill_parent" android:gravity="center"
         		>
+            	
 	            <TextView
 	       			android:id="@+id/listen_text"
 	       			android:layout_width="fill_parent"
@@ -80,6 +85,7 @@
 	                android:src="@drawable/ic_record" 
 	                android:text="@string/record_text"
 	                />
+	            
 			</TableRow>
 			
 			<TableRow
@@ -87,6 +93,7 @@
         		android:layout_width="match_parent"
         		android:layout_height="fill_parent" android:gravity="center"
         		>
+	            
 	            <TextView
 	       			android:id="@+id/record_text"
 	       			android:layout_width="fill_parent"
@@ -103,6 +110,7 @@
 	                android:scaleType="center"
 	                android:src="@drawable/ic_record" 
 	                />
+	            
 			</TableRow>
 			
             <TableRow
@@ -110,6 +118,7 @@
         		android:layout_width="match_parent"
         		android:layout_height="fill_parent" android:gravity="center"
         	>
+	            
             <TextView
        			android:id="@+id/record_history_text"
        			android:layout_width="fill_parent"
@@ -118,6 +127,7 @@
         			android:textColor="@android:color/black" 
        			android:text="@string/record_history_text"
        			/>
+            
 			</TableRow>
         	
             <TableRow
@@ -125,6 +135,7 @@
         		android:layout_width="match_parent"
         		android:layout_height="fill_parent" android:gravity="center"
         	>        
+        	
             <ImageView
                 android:id="@+id/history1_img"
                 android:layout_width="wrap_content"
@@ -132,6 +143,7 @@
                 android:scaleType="center"
                 android:src="@drawable/ic_play" 
                 />
+            
             <ImageView
                 android:id="@+id/history2_img"
                 android:layout_width="wrap_content"
@@ -139,6 +151,7 @@
                 android:scaleType="center"
                 android:src="@drawable/ic_play" 
                 />
+            
             <ImageView
                 android:id="@+id/history3_img"
                 android:layout_width="wrap_content"
@@ -146,6 +159,7 @@
                 android:scaleType="center"
                 android:src="@drawable/ic_play" 
                 />
+            
 			</TableRow>
         	 
         </LinearLayout>

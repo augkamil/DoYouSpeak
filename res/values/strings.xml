@@ -14,7 +14,7 @@
     <string name="star_on">Usuń z listy</string>
     <string name="star_off">Dodaj do swojej listy</string>
     <string name="my_localization">Moja lokalizacja</string>
-    <string name="chose_localization">Wybierz Lokalizację</string>
+    <string name="choose_localization">Wybierz Lokalizację</string>
     <string name="writing_localization">Kraj, region</string>
     <string name="expressionCategory">Kategoria</string>
     <string name="record_text">Nagraj Siebie</string>
@@ -27,5 +27,7 @@
     <string name="listen_text">Posłuchaj</string>
     <string name="record_history_text">Odtwórz Swoje nagrania:</string>
     <string name="test_var">lalalala44444</string>
+    <string name="your_localization">Poznań, Polska</string>
+    <string name="choose_languages">Wybierz język</string>
 
 </resources>

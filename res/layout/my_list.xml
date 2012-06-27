@@ -7,6 +7,7 @@
    android:orientation="vertical"
    android:background="@color/background_color"
    >
+   
    <com.markupartist.android.widget.ActionBar
 	    android:id="@+id/actionbar"
 	    app:title="@string/app_name"
@@ -18,9 +19,11 @@
        android:layout_width="match_parent"
        android:layout_height="wrap_content"
        android:ems="10"
-       android:text="AutoCompleteTextView" >
-
+       android:text="AutoCompleteTextView" 
+       >
+       
        <requestFocus />
+       
    </AutoCompleteTextView>
     
 </LinearLayout>
