@@ -11,8 +11,8 @@
     <string name="home">Strona Główna</string>
     <string name="record">Nagrywanie</string>
     <string name="details">Szczegóły</string>
-    <string name="star_on">Usuń z listy</string>
-    <string name="star_off">Dodaj do swojej listy</string>
+    <string name="star_on">Usuń</string>
+    <string name="star_off">Dodaj</string>
     <string name="my_localization">Moja lokalizacja</string>
     <string name="choose_localization">Wybierz Lokalizację</string>
     <string name="writing_localization">Kraj, region</string>

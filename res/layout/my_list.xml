@@ -14,16 +14,41 @@
 	    style="@style/ActionBar"
         />
 
-   <AutoCompleteTextView
-       android:id="@+id/autoCompleteTextView1"
+   <RelativeLayout
        android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-       android:ems="10"
-       android:text="AutoCompleteTextView" 
-       >
+       android:layout_height="wrap_content" >
+
+       <TextView
+           android:id="@+id/my_list_item"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_alignParentLeft="true"
+           android:layout_centerVertical="true"
+           android:layout_marginLeft="40dp"
+           android:text="TextView" 
+           />
        
-       <requestFocus />
+       <ImageButton
+           android:id="@+id/star_on_button"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_alignParentTop="true"
+           android:layout_marginRight="14dp"
+           android:layout_toLeftOf="@+id/play_button"
+           android:src="@drawable/ic_star_on" 
+           android:background="@color/background_color"
+           />
+
+       <ImageButton
+           android:id="@+id/play_button"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_alignParentRight="true"
+           android:layout_alignParentTop="true"
+           android:src="@drawable/ic_play" 
+           android:background="@color/background_color"
+           />
        
-   </AutoCompleteTextView>
+   </RelativeLayout>
     
 </LinearLayout>

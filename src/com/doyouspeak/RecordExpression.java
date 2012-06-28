@@ -23,5 +23,7 @@ public class RecordExpression extends Activity {
         actionBar.addAction(my_ListAction);
         final Action recordAction = new IntentAction(this, new Intent(this, RecordExpression.class), R.drawable.ic_action_record);
         actionBar.addAction(recordAction);
+        
+        
 	}
 }

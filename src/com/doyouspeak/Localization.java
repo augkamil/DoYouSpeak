@@ -14,8 +14,6 @@ import com.markupartist.android.widget.ActionBar.Action;
 import com.markupartist.android.widget.ActionBar.IntentAction;
 
 public class Localization extends Activity {
-	private TextView expression;
-	TextView txt;
     TextView locTxtV;//TextView with writen localization
     TextView locWrite;//AutoCompleteTextView
 	
@@ -33,7 +31,6 @@ public class Localization extends Activity {
 
         locTxtV = (TextView) findViewById(R.id.your_localization);
         locWrite = (TextView) findViewById(R.id.writing_localization);
-        //txt = (TextView)findViewById(R.id.autoCompleteTextView1);
     
         final ActionBar actionBar = (ActionBar) findViewById(R.id.actionbar);
 
@@ -56,11 +53,6 @@ public class Localization extends Activity {
         ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, yourLocalizations);
         langSpinner.setAdapter(spinnerArrayAdapter);
         
-        /*
-        setListAdapter(new ArrayAdapter<String>(this,
-        		R.layout.my_list, R.id.expressionInList_text,
-        		myExpressions));
-        expression=(TextView)findViewById(R.id.expressionInList_text);*/
 	}
 
 }

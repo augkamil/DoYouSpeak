@@ -26,7 +26,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".RecordExpression"></activity>
+        <activity android:name=".RecordExpression" android:screenOrientation="portrait"></activity>
         <activity android:name="Localization"></activity>
         <activity android:name="Expressions"></activity>
         <activity android:name="Reminder"></activity>
