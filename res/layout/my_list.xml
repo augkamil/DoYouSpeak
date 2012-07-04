@@ -5,7 +5,7 @@
    android:layout_width="fill_parent"
    android:layout_height="wrap_content"
    android:orientation="vertical"
-   android:background="@color/background_color"
+   android:background="@drawable/background_por"
    >
    
    <com.markupartist.android.widget.ActionBar
@@ -36,7 +36,7 @@
            android:layout_marginRight="14dp"
            android:layout_toLeftOf="@+id/play_button"
            android:src="@drawable/ic_star_on" 
-           android:background="@color/background_color"
+           android:background="@android:color/transparent"
            />
 
        <ImageButton
@@ -46,7 +46,7 @@
            android:layout_alignParentRight="true"
            android:layout_alignParentTop="true"
            android:src="@drawable/ic_play" 
-           android:background="@color/background_color"
+           android:background="@android:color/transparent"
            />
        
    </RelativeLayout>

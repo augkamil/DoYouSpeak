@@ -1,20 +1,16 @@
 package com.doyouspeak;
 
-import android.app.Activity;
 import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
+import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
-
 
 import com.markupartist.android.widget.ActionBar;
 import com.markupartist.android.widget.ActionBar.Action;
 import com.markupartist.android.widget.ActionBar.IntentAction;
 
-public class Expressions extends Activity {
+public class Expressions extends ListActivity {
 	private TextView expression;
 	TextView txt;
 	
@@ -40,11 +36,8 @@ public class Expressions extends Activity {
         actionBar.addAction(my_ListAction);
         final Action recordAction = new IntentAction(this, new Intent(this, RecordExpression.class), R.drawable.ic_action_record);
         actionBar.addAction(recordAction);
-        /*
-        setListAdapter(new ArrayAdapter<String>(this,
-        		R.layout.my_list, R.id.expressionInList_text,
-        		myExpressions));
-        expression=(TextView)findViewById(R.id.expressionInList_text);*/
+       
+        //setListAdapter(new SimpleCursorAdapter(this, R.layout.expressions, null, myExpressions));
 	}
 	
 

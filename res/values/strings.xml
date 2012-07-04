@@ -11,8 +11,8 @@
     <string name="home">Strona Główna</string>
     <string name="record">Nagrywanie</string>
     <string name="details">Szczegóły</string>
-    <string name="star_on">Usuń</string>
-    <string name="star_off">Dodaj</string>
+    <string name="star_on"></string>
+    <string name="star_off"></string>
     <string name="my_localization">Moja lokalizacja</string>
     <string name="choose_localization">Wybierz Lokalizację</string>
     <string name="writing_localization">Kraj, region</string>
@@ -29,5 +29,14 @@
     <string name="test_var">lalalala44444</string>
     <string name="your_localization">Poznań, Polska</string>
     <string name="choose_languages">Wybierz język</string>
+    <string name="date_setter_text">Data</string>
+    <string name="time_setter_text">Godzina</string>
+    <string name="setting_buttun_text">Ustaw</string>
+    <string name="cancel_button_text">Anuluj</string>
+    <string name="repeat_text">Powtórz:</string>
+    <string name="repeat_once_rb">Zdarzenie jednorazowe</string>
+    <string name="repeat_day_rb">Codziennie</string>
+    <string name="repeat_week_rb">Co tydzień</string>
+    <string name="chose_day_text">Dzień:</string>
 
 </resources>

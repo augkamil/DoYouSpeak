@@ -1,20 +1,17 @@
 package com.doyouspeak;
 
-import android.app.Activity;
-import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.DialogFragment;
+import android.support.v4.app.FragmentActivity;
 import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
 import android.widget.TextView;
-
 
 import com.markupartist.android.widget.ActionBar;
 import com.markupartist.android.widget.ActionBar.Action;
 import com.markupartist.android.widget.ActionBar.IntentAction;
 
-public class Reminder extends Activity {
+public class Reminder extends FragmentActivity {
 	private TextView expression;
 	TextView txt;
 	
@@ -47,5 +44,14 @@ public class Reminder extends Activity {
         expression=(TextView)findViewById(R.id.expressionInList_text);*/
 	}
 	
+	public void showTimePickerDialog(View v) {
+		DialogFragment newFragment = new TimePickerFragment();
+	    newFragment.show(getSupportFragmentManager(), "timePicker");
+	}
+	
+	public void showDatePickerDialog(View v) {
+		DialogFragment newFragment = new DatePickerFragment();
+        newFragment.show(getSupportFragmentManager(), "datePicker");
+    }
 
 }

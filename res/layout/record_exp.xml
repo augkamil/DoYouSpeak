@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res/com.doyouspeak"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="@color/background_color"
+    android:background="@drawable/background_por"
     android:orientation="vertical" >
 
     <com.markupartist.android.widget.ActionBar
@@ -20,7 +20,7 @@
         android:contentDescription="@string/previous_text"
         android:scaleType="fitCenter"
         android:src="@drawable/ic_previous" 
-        android:background="@color/background_color" 
+        android:background="@android:color/transparent" 
         android:visibility="visible"
         />
 
@@ -54,7 +54,7 @@
             android:layout_alignParentRight="true"
             android:layout_alignParentTop="true"
             android:layout_marginTop="20dp"
-            android:background="@color/background_color"
+            android:background="@android:color/transparent"
             android:drawableBottom="@drawable/favorite_button" 
             android:textOff="@string/star_off" 
             android:textOn="@string/star_on"
@@ -80,7 +80,7 @@
             android:layout_alignBottom="@+id/listen_text"
             android:layout_alignParentRight="true"
             android:src="@drawable/ic_play" 
-            android:background="@color/background_color"
+            android:background="@android:color/transparent"
             />
 
         <TextView
@@ -103,8 +103,8 @@
             android:layout_alignBottom="@+id/record_text"
             android:layout_alignParentRight="true"
             android:layout_below="@+id/listenButton"
-            android:src="@drawable/ic_record" 
-            android:background="@color/background_color"
+            android:src="@drawable/ic_action_record" 
+            android:background="@android:color/transparent"
             />
 
         <TextView
@@ -126,7 +126,7 @@
             android:layout_below="@+id/record_history_text"
             android:layout_marginLeft="10dp"
             android:src="@drawable/ic_play" 
-            android:background="@color/background_color"
+            android:background="@android:color/transparent"
             />
 
         <ImageButton
@@ -136,7 +136,7 @@
             android:layout_alignBottom="@+id/historyButton1"
             android:layout_toRightOf="@+id/historyButton1"
             android:src="@drawable/ic_play" 
-            android:background="@color/background_color"
+            android:background="@android:color/transparent"
             />
 
         <ImageButton
@@ -146,7 +146,7 @@
             android:layout_alignBottom="@+id/historyButton2"
             android:layout_toRightOf="@+id/historyButton2"
             android:src="@drawable/ic_play" 
-            android:background="@color/background_color"
+            android:background="@android:color/transparent"
             />
 
     </RelativeLayout>
@@ -160,7 +160,7 @@
         android:contentDescription="@string/next_text"
         android:scaleType="fitCenter"
         android:src="@drawable/ic_next" 
-        android:background="@color/background_color" 
+        android:background="@android:color/transparent" 
         android:visibility="visible"
         />
 

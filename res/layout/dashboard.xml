@@ -4,7 +4,7 @@
    xmlns:app="http://schemas.android.com/apk/res/com.doyouspeak"
    android:layout_width="fill_parent"
    android:layout_height="fill_parent"
-   android:background="@color/background_color"
+   android:background="@drawable/background_por"
    >
     <com.markupartist.android.widget.ActionBar
 	    android:id="@+id/actionbar"

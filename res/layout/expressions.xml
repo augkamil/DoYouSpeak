@@ -4,7 +4,7 @@
    android:layout_width="fill_parent"
    android:layout_height="wrap_content"
    android:orientation="vertical"
-   android:background="@color/background_color"
+   android:background="@drawable/background_por"
    xmlns:android="http://schemas.android.com/apk/res/android"
    >
    
@@ -14,6 +14,11 @@
 	    style="@style/ActionBar"
         />
 
-   
+   <ExpandableListView
+       android:id="@+id/expandableListView1"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content" >
+       
+   </ExpandableListView>
     
 </LinearLayout>

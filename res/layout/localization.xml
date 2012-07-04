@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res/com.doyouspeak"
     android:layout_width="match_parent"
     android:layout_height="fill_parent"
-    android:background="@color/background_color"
+    android:background="@drawable/background_por"
     android:orientation="vertical" 
     android:visibility="visible" 
     android:clickable="true"
@@ -23,7 +23,7 @@
         android:layout_marginTop="20dp"
         android:text="@string/my_localization" 
         android:padding="4dp"
-        android:textColor="#FFFFFF"
+        android:textColor="@color/white"
         android:clickable="true"/>
 
     <TextView
@@ -77,8 +77,8 @@
         android:layout_alignRight="@+id/writing_localization"
         android:layout_below="@+id/writing_localization"
         android:layout_marginTop="10dp"
-        android:background="@color/background_color"
-        android:popupBackground="@color/background_color"
+        android:background="@android:color/transparent"
+        android:popupBackground="@android:color/transparent"
         android:visibility="visible"
         android:prompt="@string/choose_languages" 
         />
