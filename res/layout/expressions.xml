@@ -14,11 +14,22 @@
 	    style="@style/ActionBar"
         />
 
-   <ExpandableListView
-       android:id="@+id/expandableListView1"
+   <TextView
+        android:id="@+id/categorysText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dip"
+        android:text="@string/categorys_text" 
+        android:textColor="@color/font_color"
+        android:textStyle="bold" 
+        android:padding="5dip"/>
+   
+   <!-- ExpandableListView -->
+   <ListView
+       android:id="@android:id/list"
        android:layout_width="match_parent"
        android:layout_height="wrap_content" >
-       
-   </ExpandableListView>
+   </ListView>
+   <!-- /ExpandableListView -->
     
 </LinearLayout>

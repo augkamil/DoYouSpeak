@@ -39,5 +39,8 @@
     <string name="repeat_week_rb">Co tydzień</string>
     <string name="chose_day_text">Dzień:</string>
     <string name="writing_expression">Wpisz zwrot</string>
+    <string name="my_expressions_list">Moja lista zwrotów</string>
+    <string name="categorys_text">Kategorie zwrotów:</string>
+    <string name="search_hint">Wyszukaj kategorię lub zwrot </string>
 
 </resources>

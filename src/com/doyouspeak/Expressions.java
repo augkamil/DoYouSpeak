@@ -1,9 +1,15 @@
 package com.doyouspeak;
 
 import android.app.ListActivity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.res.TypedArray;
 import android.os.Bundle;
-import android.widget.SimpleCursorAdapter;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.markupartist.android.widget.ActionBar;
@@ -11,23 +17,12 @@ import com.markupartist.android.widget.ActionBar.Action;
 import com.markupartist.android.widget.ActionBar.IntentAction;
 
 public class Expressions extends ListActivity {
-	private TextView expression;
-	TextView txt;
-	
-	private static final String[] myExpressions={"lorem", "ipsum", "dolor",
-		"sit", "amet",
-		"consectetuer", "adipiscing", "elit", "morbi", "vel",
-		"ligula", "vitae", "arcu", "aliquet", "mollis",
-		"etiam", "vel", "erat", "placerat", "ante",
-		"porttitor", "sodales", "pellentesque", "augue", "purus"};
-	
+
 	@Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.expressions);
+        setContentView(R.layout.expressions);     
         
-        //txt = (TextView)findViewById(R.id.autoCompleteTextView1);
-    
         final ActionBar actionBar = (ActionBar) findViewById(R.id.actionbar);
 
         actionBar.setHomeAction(new IntentAction(this, DoYouSpeak.createIntent(this), R.drawable.ic_action_home));
@@ -36,9 +31,63 @@ public class Expressions extends ListActivity {
         actionBar.addAction(my_ListAction);
         final Action recordAction = new IntentAction(this, new Intent(this, RecordExpression.class), R.drawable.ic_action_record);
         actionBar.addAction(recordAction);
+        
+        String[] myExpressions={"lorem", "ipsum", "dolor",
+        		"sit", "amet",
+        		"consectetuer", "adipiscing", "elit", "morbi", "vel",
+        		"ligula", "vitae", "arcu", "aliquet", "mollis",
+        		"etiam", "vel", "erat", "placerat", "ante",
+        		"porttitor", "sodales", "pellentesque", "augue", "purus"};
+            
+         Context ctx = getApplicationContext(); 
+         
+         setListAdapter(new expressionsAdapter(ctx, R.layout.expressions_element, myExpressions));
        
-        //setListAdapter(new SimpleCursorAdapter(this, R.layout.expressions, null, myExpressions));
-	}
+   	}
 	
+}
 
+class expressionsAdapter extends ArrayAdapter<String> {
+
+	private LayoutInflater mInflater;
+	
+	private String[] mStrings;
+	
+	private int mViewResourceId;
+	
+	public expressionsAdapter(Context ctx, int viewResourceId, String[] strings) {
+		super(ctx, viewResourceId, strings);
+		
+		mInflater = (LayoutInflater)ctx.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+		
+		mStrings = strings;
+		
+		mViewResourceId = viewResourceId;
+
+	}
+
+	@Override
+	public int getCount() {
+		return mStrings.length;
+	}
+
+	@Override
+	public String getItem(int position) {
+		return mStrings[position];
+	}
+
+	@Override
+	public long getItemId(int position) {
+		return 0;
+	}
+
+	@Override
+	public View getView(int position, View convertView, ViewGroup parent) {
+		convertView = mInflater.inflate(mViewResourceId, null);
+		
+		TextView tv = (TextView)convertView.findViewById(R.id.expressionsElement);
+		tv.setText(mStrings[position]);
+		
+		return convertView;
+	}
 }
