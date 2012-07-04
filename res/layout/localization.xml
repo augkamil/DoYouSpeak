@@ -48,7 +48,7 @@
         android:layout_below="@+id/choose_localization"
         android:layout_marginTop="10dp"
         android:ems="10"
-        android:text="@string/writing_localization" 
+        android:hint="@string/writing_localization"
         android:textColor="@color/font_color"
         android:visibility="visible" 
         />

@@ -18,8 +18,8 @@
     <string name="writing_localization">Kraj, region</string>
     <string name="expressionCategory">Kategoria</string>
     <string name="record_text">Nagraj Siebie</string>
-    <string name="record_play">Sprawdź nagranie</string>
-    <string name="choose_category">Wybierz kategorię</string>
+    <string name="record_play_text">Sprawdź nagranie</string>
+    <string name="choose_category_text">Wybierz kategorię</string>
     <string name="accept_button">Zaakceptuj</string>
     <string name="next_text">Następny</string>
     <string name="previous_text">Poprzedni</string>
@@ -38,5 +38,6 @@
     <string name="repeat_day_rb">Codziennie</string>
     <string name="repeat_week_rb">Co tydzień</string>
     <string name="chose_day_text">Dzień:</string>
+    <string name="writing_expression">Wpisz zwrot</string>
 
 </resources>

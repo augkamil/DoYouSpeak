@@ -9,159 +9,132 @@
     <com.markupartist.android.widget.ActionBar
         android:id="@+id/actionbar"
         style="@style/ActionBar"
-        app:title="@string/app_name" />
-
-    <ImageButton
-        android:id="@+id/previous_img"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_centerVertical="true"
-        android:contentDescription="@string/previous_text"
-        android:scaleType="fitCenter"
-        android:src="@drawable/ic_previous" 
-        android:background="@android:color/transparent" 
-        android:visibility="visible"
+        app:title="@string/app_name" 
         />
-
+    
     <RelativeLayout
+        android:id="@+id/recordBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_below="@+id/actionbar"
-        android:layout_toLeftOf="@+id/next_img"
-        android:layout_toRightOf="@+id/previous_img" 
         >
+
+        <EditText
+            android:id="@+id/editExpression"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:hint="@string/writing_expression" 
+            android:layout_margin="20dip">
+
+            <requestFocus />
+        </EditText>
         
         <TextView
-            android:id="@+id/expression"
+            android:id="@+id/recordText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/favorite"
             android:layout_alignParentLeft="true"
-            android:layout_toLeftOf="@+id/favoriteButton"
-            android:paddingLeft="30dp"
-            android:text="@string/expression_text"
+            android:text="@string/record_text"
             android:textColor="@color/font_color"
-            android:textSize="25dp"
-            android:textStyle="bold" 
-            />
-        
-        <ToggleButton
-            android:id="@+id/favoriteButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="20dp"
-            android:background="@android:color/transparent"
-            android:drawableBottom="@drawable/favorite_button" 
-            android:textOff="@string/star_off" 
-            android:textOn="@string/star_on"
-            />
-
-        <TextView
-            android:id="@+id/listen_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_below="@+id/favoriteButton"
-            android:layout_marginTop="60dp"
-            android:text="@string/listen_text" 
-            android:textColor="@color/font_color"
-            android:textSize="20dp" 
-            android:paddingLeft="15dp"
-            />
-
-        <ImageButton
-            android:id="@+id/listenButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/listen_text"
-            android:layout_alignParentRight="true"
-            android:src="@drawable/ic_play" 
-            android:background="@android:color/transparent"
-            />
-
-        <TextView
-            android:id="@+id/record_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_below="@+id/listenButton"
-            android:layout_marginTop="20dp"
-            android:text="@string/record_text" 
-            android:textColor="@color/font_color" 
-            android:textSize="20dp" 
-            android:paddingLeft="15dp"
+            android:textSize="20dp"
+            android:padding="15dip"
+            android:layout_below="@+id/editExpression"
             />
 
         <ImageButton
             android:id="@+id/recordButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/record_text"
             android:layout_alignParentRight="true"
-            android:layout_below="@+id/listenButton"
-            android:src="@drawable/ic_action_record" 
             android:background="@android:color/transparent"
+            android:src="@drawable/ic_action_record" 
+            android:layout_alignBottom="@+id/recordText"
+            android:layout_below="@+id/editExpression"
             />
 
         <TextView
-            android:id="@+id/record_history_text"
+            android:id="@+id/recordPlayText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
+            android:layout_below="@+id/recordText"
+            android:text="@string/record_play_text"
+            android:textColor="@color/font_color"
+            android:textSize="20dp" 
+            android:padding="15dip"/>
+
+        <ImageButton
+            android:id="@+id/recordPlayButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/recordPlayText"
             android:layout_alignParentRight="true"
-            android:layout_below="@+id/record_text"
-            android:layout_marginTop="20dp"
-            android:text="@string/record_history_text" 
-            android:textColor="@color/font_color" android:textSize="20dp" android:paddingLeft="15dp"/>
+            android:layout_below="@+id/recordButton"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_play" />
 
-        <ImageButton
-            android:id="@+id/historyButton1"
+		<TextView
+            android:id="@+id/chooseCategoryText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
-            android:layout_below="@+id/record_history_text"
-            android:layout_marginLeft="10dp"
-            android:src="@drawable/ic_play" 
-            android:background="@android:color/transparent"
-            />
+            android:layout_below="@+id/recordPlayText"
+            android:text="@string/choose_category_text"
+            android:textColor="@color/font_color"
+            android:textSize="20dp" android:padding="15dip"/>
 
         <ImageButton
-            android:id="@+id/historyButton2"
+            android:id="@+id/chooseCategoryButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/historyButton1"
-            android:layout_toRightOf="@+id/historyButton1"
-            android:src="@drawable/ic_play" 
+            android:layout_alignBottom="@+id/chooseCategoryText"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/recordPlayButton"
             android:background="@android:color/transparent"
+            android:src="@drawable/ic_expressions" 
             />
 
-        <ImageButton
-            android:id="@+id/historyButton3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/historyButton2"
-            android:layout_toRightOf="@+id/historyButton2"
-            android:src="@drawable/ic_play" 
-            android:background="@android:color/transparent"
-            />
-
+        <LinearLayout
+	        android:id="@+id/confirmButtons"
+	        android:orientation="horizontal"
+	        android:background="@android:color/transparent"
+	        android:paddingLeft="4.0dip"
+	        android:paddingTop="5.0dip"
+	        android:paddingRight="4.0dip"
+	        android:paddingBottom="1.0dip"
+	        android:layout_width="fill_parent" 
+	        android:layout_height="wrap_content"
+	        android:layout_below="@+id/chooseCategoryText"
+	        >
+        
+	        <Button
+	        	android:id="@+id/setButton"
+	        	style="@style/button"
+		        android:layout_width="0.0dip" 
+		        android:layout_height="wrap_content"
+		        android:text="@string/setting_buttun_text" 
+		        android:layout_weight="1.0" 
+		        android:padding="5dip" 
+		        android:layout_margin="10dip" 
+		        android:gravity="center_horizontal"
+		        android:textColor="@color/white"/>
+	        
+		    <Button
+		        android:id="@+id/cancelButton"
+		        style="@style/button"
+		        android:layout_width="0.0dip" 
+		        android:layout_height="wrap_content"
+		        android:text="@string/cancel_button_text" 
+		        android:layout_weight="1.0" 
+		        android:padding="5dip" 
+		        android:layout_margin="10dip" 
+		        android:gravity="center_horizontal"
+		        android:textColor="@color/white"/>	
+	    
+    </LinearLayout>
+                
     </RelativeLayout>
-
-    <ImageButton
-        android:id="@+id/next_img"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_alignTop="@+id/previous_img"
-        android:contentDescription="@string/next_text"
-        android:scaleType="fitCenter"
-        android:src="@drawable/ic_next" 
-        android:background="@android:color/transparent" 
-        android:visibility="visible"
-        />
 
 </RelativeLayout>
