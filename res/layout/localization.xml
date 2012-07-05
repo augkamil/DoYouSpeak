@@ -78,7 +78,7 @@
         android:layout_below="@+id/writing_localization"
         android:layout_marginTop="10dp"
         android:background="@android:color/transparent"
-        android:popupBackground="@android:color/transparent"
+        android:popupBackground="@color/background_color"
         android:visibility="visible"
         android:prompt="@string/choose_languages" 
         />

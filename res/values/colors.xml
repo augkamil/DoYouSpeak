@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="background_color">#FFCA3D</color>
-    <color name="action_bar_color">#B70000</color>
-    <color name="font_color">#0092B2</color>
-    <color name="button_color">#0092B2</color>
+    <color name="background_color">#00834b</color>
+    <color name="action_bar_color">#53413e</color>
+    <color name="font_color">#FFFFFF</color>
+    <color name="button_color">#00834b</color>
     <color name="white">#FFFFFF</color>
 </resources> 
 

@@ -21,7 +21,6 @@ public class DoYouSpeak extends Activity implements OnItemClickListener {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        requestWindowFeature(Window.FEATURE_NO_TITLE); 
         setContentView(R.layout.dashboard);
         
         context = getApplicationContext();

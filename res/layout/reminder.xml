@@ -24,15 +24,16 @@
         android:layout_centerVertical="false" 
         android:layout_centerHorizontal="true" 
         android:textStyle="bold"
+        android:textAppearance="?android:textAppearanceMedium"
         />
 
     <LinearLayout
         android:id="@+id/choseDayButtons"
         android:orientation="horizontal"
         android:background="@android:color/transparent"
-        android:paddingLeft="4.0dip"
+        android:paddingLeft="15dip"
         android:paddingTop="5.0dip"
-        android:paddingRight="4.0dip"
+        android:paddingRight="15dip"
         android:paddingBottom="1.0dip"
         android:layout_width="fill_parent" 
         android:layout_height="wrap_content"
@@ -75,21 +76,27 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/choseDayButtons"
         android:text="@string/repeat_text"
-        android:textColor="@color/font_color" android:layout_centerHorizontal="true" android:layout_marginTop="15dip" android:textStyle="bold"/>
+        android:textColor="@color/font_color" 
+        android:textAppearance="?android:textAppearanceMedium"
+        android:layout_centerHorizontal="true" 
+        android:layout_marginTop="15dip" 
+        android:textStyle="bold"
+        />
 
     <RadioGroup
         android:id="@+id/repeatGroup"
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/repeat"
         android:layout_centerVertical="true"
-        android:paddingLeft="40dp" android:layout_centerHorizontal="true">
+        android:layout_centerHorizontal="true" android:paddingLeft="20dip" android:paddingRight="20dip">
 
         <RadioButton
             android:id="@+id/radio2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/repeat_once_rb"
+            android:textAppearance="?android:textAppearanceMedium"
             android:textColor="@color/font_color" />
 
         <RadioButton
@@ -98,6 +105,7 @@
             android:layout_height="wrap_content"
             android:checked="true"
             android:text="@string/repeat_day_rb"
+            android:textAppearance="?android:textAppearanceMedium"
             android:textColor="@color/font_color" />
 
         <RadioButton
@@ -105,6 +113,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/repeat_week_rb"
+            android:textAppearance="?android:textAppearanceMedium"
             android:textColor="@color/font_color" />
     </RadioGroup>
 
@@ -112,9 +121,9 @@
         android:id="@+id/confirmButtons"
         android:orientation="horizontal"
         android:background="@android:color/transparent"
-        android:paddingLeft="4.0dip"
+        android:paddingLeft="15dip"
         android:paddingTop="5.0dip"
-        android:paddingRight="4.0dip"
+        android:paddingRight="15dip"
         android:paddingBottom="1.0dip"
         android:layout_width="fill_parent" 
         android:layout_height="wrap_content"

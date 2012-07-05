@@ -49,18 +49,20 @@ containing a value of this type.
         public static final int ic_action_my_list=0x7f020009;
         public static final int ic_action_record=0x7f02000a;
         public static final int ic_expressions=0x7f02000b;
-        public static final int ic_launcher=0x7f02000c;
-        public static final int ic_localization=0x7f02000d;
-        public static final int ic_my_list=0x7f02000e;
-        public static final int ic_next=0x7f02000f;
-        public static final int ic_play=0x7f020010;
-        public static final int ic_previous=0x7f020011;
-        public static final int ic_record=0x7f020012;
-        public static final int ic_reminder=0x7f020013;
-        public static final int ic_search=0x7f020014;
-        public static final int ic_star_off=0x7f020015;
-        public static final int ic_star_on=0x7f020016;
-        public static final int icon=0x7f020017;
+        public static final int ic_expressions_small=0x7f02000c;
+        public static final int ic_launcher=0x7f02000d;
+        public static final int ic_localization=0x7f02000e;
+        public static final int ic_my_list=0x7f02000f;
+        public static final int ic_next=0x7f020010;
+        public static final int ic_play=0x7f020011;
+        public static final int ic_play_small=0x7f020012;
+        public static final int ic_previous=0x7f020013;
+        public static final int ic_record=0x7f020014;
+        public static final int ic_reminder=0x7f020015;
+        public static final int ic_search=0x7f020016;
+        public static final int ic_star_off=0x7f020017;
+        public static final int ic_star_on=0x7f020018;
+        public static final int icon=0x7f020019;
     }
     public static final class id {
         public static final int actionbar=0x7f08000a;
@@ -102,7 +104,7 @@ containing a value of this type.
         public static final int my_list_item=0x7f080025;
         public static final int my_localization=0x7f08001f;
         public static final int next_img=0x7f080013;
-        public static final int play_button=0x7f080026;
+        public static final int play_button=0x7f080027;
         public static final int previous_img=0x7f080014;
         public static final int radio0=0x7f080039;
         public static final int radio1=0x7f08003a;
@@ -118,7 +120,7 @@ containing a value of this type.
         public static final int repeatGroup=0x7f080037;
         public static final int screen=0x7f080000;
         public static final int setButton=0x7f080030;
-        public static final int star_on_button=0x7f080027;
+        public static final int star_on_button=0x7f080026;
         public static final int timeButton=0x7f080035;
         public static final int writing_localization=0x7f080021;
         public static final int your_localization=0x7f080022;

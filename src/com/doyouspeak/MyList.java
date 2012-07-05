@@ -7,7 +7,10 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import com.markupartist.android.widget.ActionBar;
@@ -15,7 +18,8 @@ import com.markupartist.android.widget.ActionBar.Action;
 import com.markupartist.android.widget.ActionBar.IntentAction;
 
 public class MyList extends ListActivity {
-	
+	public final static String ID_EXTRA="";
+
 	@Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,7 +34,7 @@ public class MyList extends ListActivity {
         final Action recordAction = new IntentAction(this, new Intent(this, RecordExpression.class), R.drawable.ic_action_record);
         actionBar.addAction(recordAction);
         
-        String[] myExpressions={"lorem", "ipsum", "dolor",
+        String[] myExpressions={"Teraz napiszę bardzo długi tekst, co Ty na to?", "ipsum", "dolor",
         		"sit", "amet",
         		"consectetuer", "adipiscing", "elit", "morbi", "vel",
         		"ligula", "vitae", "arcu", "aliquet", "mollis",
@@ -41,6 +45,27 @@ public class MyList extends ListActivity {
          
          setListAdapter(new expressionsAdapter(ctx, R.layout.my_list_element, myExpressions));
         
+         
+         ListView lv = getListView();
+         // listening to single list item on click
+         lv.setOnItemClickListener(new OnItemClickListener() {
+           public void onItemClick(AdapterView<?> parent, View view,
+               int position, long id) {
+  
+               // selected item
+               String exp = ((TextView) view).getText().toString();
+  
+               // Launching new Activity on selecting single List Item
+               Intent i = new Intent(MyList.this, MyListElement.class);
+               // sending data to new activity
+               i.putExtra("exp_item", exp);
+               startActivity(i);
+
+           }
+         });
+
+
+         
 	}
 	
 	class expressionsAdapter extends ArrayAdapter<String> {

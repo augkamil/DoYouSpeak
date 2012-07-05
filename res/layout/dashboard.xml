@@ -20,6 +20,7 @@
        android:verticalSpacing="20.0dip"
        android:layout_centerInParent="true"
        style="@style/dashboard" 
-       />
+       android:padding="15dip" 
+       android:layout_marginTop="45dip"/>
 
 </RelativeLayout>
