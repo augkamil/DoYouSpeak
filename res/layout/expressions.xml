@@ -25,10 +25,8 @@
         android:textAppearance="?android:textAppearanceMedium"
         android:gravity="center_horizontal"/>
    
-   <ListView 
-       android:id="@android:id/list"
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content" 
+   <ExpandableListView
+       android:id="@+id/expListView" 
        android:layout_marginBottom="40dip" 
        android:paddingLeft="20dip" 
        android:paddingRight="20dip" 

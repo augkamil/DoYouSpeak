@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Making the style for the button. Using a color and round shapes of corners -->
+<shape      xmlns:android="http://schemas.android.com/apk/res/android"
+            android:shape="rectangle">
+    
+    <solid   android:color="@color/button_color"/>
+    
+    <corners    android:bottomLeftRadius="8dip"
+                android:topRightRadius="1dip"
+                android:topLeftRadius="1dip"
+                android:bottomRightRadius="1dip"
+                />
+    <stroke android:width="2px" android:color="#FFFFFF" />
+</shape>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color" >
+
+    <TextView
+        android:id="@+id/expressionsGroupElement"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dip"
+        android:layout_toLeftOf="@+id/favoriteButton"
+        android:text="TextView"
+        android:textAppearance="?android:textAppearanceMedium"
+        android:textColor="@color/font_color" android:textStyle="bold"/>
+    
+    <ToggleButton
+            android:id="@+id/favoriteGroupButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:drawableBottom="@drawable/favorite_button"
+            android:layout_margin="5dip" 
+        	android:layout_alignParentRight="true"
+        	android:layout_centerVertical="true"
+            android:textOff="@string/star_off"
+            android:textOn="@string/star_on" />
+
+</RelativeLayout>
