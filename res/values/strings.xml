@@ -42,5 +42,6 @@
     <string name="my_expressions_list">Moja lista zwrotów</string>
     <string name="categorys_text">Kategorie zwrotów:</string>
     <string name="search_hint">Wyszukaj kategorię lub zwrot </string>
+    <string name="choose_category_list">Wybierz kategorię</string>
 
 </resources>
