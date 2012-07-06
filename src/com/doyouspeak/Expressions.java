@@ -13,29 +13,24 @@ import android.widget.BaseExpandableListAdapter;
 import android.widget.ExpandableListView;
 import android.widget.ExpandableListView.OnChildClickListener;
 import android.widget.ExpandableListView.OnGroupClickListener;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.markupartist.android.widget.ActionBar;
-import com.markupartist.android.widget.ActionBar.Action;
-import com.markupartist.android.widget.ActionBar.IntentAction;
-
 public class Expressions extends ExpandableListActivity {
 	private ExpandableListAdapter adapter;
+	ImageButton actionHome;
+	ImageButton actionList;
+	ImageButton actionRecord;
+	Intent i = null;
+	
+	Context ctx; 
+    Context context;
 	
 	@Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.expressions);    
-        
-        final ActionBar actionBar = (ActionBar) findViewById(R.id.actionbar);
-
-        actionBar.setHomeAction(new IntentAction(this, DoYouSpeak.createIntent(this), R.drawable.ic_action_home));
-        actionBar.setTitle(R.string.app_name);  
-        final Action my_ListAction = new IntentAction(this, new Intent(this, MyList.class), R.drawable.ic_action_my_list);
-        actionBar.addAction(my_ListAction);
-        final Action recordAction = new IntentAction(this, new Intent(this, RecordExpression.class), R.drawable.ic_action_record);
-        actionBar.addAction(recordAction);
         
         String[] myExpressions={"lorem", "ipsum", "dolor",
         		"sit", "amet",
@@ -44,7 +39,16 @@ public class Expressions extends ExpandableListActivity {
         		"etiam", "vel", "erat", "placerat", "ante",
         		"porttitor", "sodales", "pellentesque", "augue", "purus"};
             
-         Context ctx = getApplicationContext(); 
+        ctx = getApplicationContext(); 
+        context = getApplicationContext();
+         
+         actionHome = (ImageButton)findViewById(R.id.actionHome);
+         actionList = (ImageButton)findViewById(R.id.actionMyList);
+         actionRecord = (ImageButton)findViewById(R.id.actionRecord);
+         
+         actionHome.setOnClickListener(lHome);
+         actionList.setOnClickListener(lList);
+         actionRecord.setOnClickListener(lRecord);
          
          //setListAdapter(new expressionsAdapter(ctx, R.layout.expressions_element, myExpressions));
       // Retrive the ExpandableListView from the layout
@@ -81,6 +85,33 @@ public class Expressions extends ExpandableListActivity {
          listView.setAdapter(adapter);
        
    	}
+	
+	private View.OnClickListener lHome = new View.OnClickListener() {
+
+		@Override
+		public void onClick(View v) {
+			i = new Intent(context, DoYouSpeak.class);
+			startActivity(i);
+		}
+	};
+
+	private View.OnClickListener lList = new View.OnClickListener() {
+
+		@Override
+		public void onClick(View v) {
+			i = new Intent(context, MyList.class);
+			startActivity(i);
+		}
+	};
+
+	private View.OnClickListener lRecord = new View.OnClickListener() {
+
+		@Override
+		public void onClick(View v) {
+			i = new Intent(context, RecordExpression.class);
+			startActivity(i);
+		}
+	};
 	
 }
 

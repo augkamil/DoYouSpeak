@@ -1,21 +1,24 @@
 package com.doyouspeak;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.TextView;
-
-import com.markupartist.android.widget.ActionBar;
-import com.markupartist.android.widget.ActionBar.Action;
-import com.markupartist.android.widget.ActionBar.IntentAction;
 
 public class Localization extends Activity {
     TextView locTxtV;//TextView with writen localization
     TextView locWrite;//AutoCompleteTextView
+    ImageButton actionHome;
+	ImageButton actionList;
+	ImageButton actionRecord;
+	Intent i = null;
+	Context context;
 	
 	private static final String[] yourLocalizations={"Język", "ipsum", "dolor",
 		"sit", "amet",
@@ -29,17 +32,18 @@ public class Localization extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.localization);
 
+        context = getApplicationContext();
+        
+        actionHome = (ImageButton)findViewById(R.id.actionHome);
+        actionList = (ImageButton)findViewById(R.id.actionMyList);
+        actionRecord = (ImageButton)findViewById(R.id.actionRecord);
+        
+        actionHome.setOnClickListener(lHome);
+        actionList.setOnClickListener(lList);
+        actionRecord.setOnClickListener(lRecord);
+        
         locTxtV = (TextView) findViewById(R.id.your_localization);
         locWrite = (TextView) findViewById(R.id.writing_localization);
-    
-        final ActionBar actionBar = (ActionBar) findViewById(R.id.actionbar);
-
-        actionBar.setHomeAction(new IntentAction(this, DoYouSpeak.createIntent(this), R.drawable.ic_action_home));
-        actionBar.setTitle(R.string.app_name);
-        final Action my_ListAction = new IntentAction(this, new Intent(this, MyList.class), R.drawable.ic_action_my_list);
-        actionBar.addAction(my_ListAction);
-        final Action recordAction = new IntentAction(this, new Intent(this, RecordExpression.class), R.drawable.ic_action_record);
-        actionBar.addAction(recordAction);
         
         Button locButton = (Button) findViewById(R.id.my_localization);
         locButton.setOnClickListener(new View.OnClickListener() {
@@ -54,5 +58,32 @@ public class Localization extends Activity {
         langSpinner.setAdapter(spinnerArrayAdapter);
         
 	}
+	
+	private View.OnClickListener lHome = new View.OnClickListener() {
+
+		@Override
+		public void onClick(View v) {
+			i = new Intent(context, DoYouSpeak.class);
+			startActivity(i);
+		}
+	};
+
+	private View.OnClickListener lList = new View.OnClickListener() {
+
+		@Override
+		public void onClick(View v) {
+			i = new Intent(context, MyList.class);
+			startActivity(i);
+		}
+	};
+
+	private View.OnClickListener lRecord = new View.OnClickListener() {
+
+		@Override
+		public void onClick(View v) {
+			i = new Intent(context, RecordExpression.class);
+			startActivity(i);
+		}
+	};
 
 }

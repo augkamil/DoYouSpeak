@@ -10,29 +10,23 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.markupartist.android.widget.ActionBar;
-import com.markupartist.android.widget.ActionBar.Action;
-import com.markupartist.android.widget.ActionBar.IntentAction;
-
 public class MyList extends ListActivity {
 	public final static String ID_EXTRA="";
+	ImageButton actionHome;
+	ImageButton actionList;
+	ImageButton actionRecord;
+	Intent i = null;
 
+	Context context;
+	
 	@Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.my_list);
-        
-        final ActionBar actionBar = (ActionBar) findViewById(R.id.actionbar);
-
-        actionBar.setHomeAction(new IntentAction(this, DoYouSpeak.createIntent(this), R.drawable.ic_action_home));
-        actionBar.setTitle(R.string.app_name);
-        final Action my_ListAction = new IntentAction(this, new Intent(this, MyList.class), R.drawable.ic_action_my_list);
-        actionBar.addAction(my_ListAction);
-        final Action recordAction = new IntentAction(this, new Intent(this, RecordExpression.class), R.drawable.ic_action_record);
-        actionBar.addAction(recordAction);
         
         String[] myExpressions={"Teraz napiszę bardzo długi tekst, co Ty na to?", "ipsum", "dolor",
         		"sit", "amet",
@@ -42,6 +36,15 @@ public class MyList extends ListActivity {
         		"porttitor", "sodales", "pellentesque", "augue", "purus"};
             
          Context ctx = getApplicationContext(); 
+         context = getApplicationContext();
+         
+         actionHome = (ImageButton)findViewById(R.id.actionHome);
+         actionList = (ImageButton)findViewById(R.id.actionMyList);
+         actionRecord = (ImageButton)findViewById(R.id.actionRecord);
+         
+         actionHome.setOnClickListener(lHome);
+         actionList.setOnClickListener(lList);
+         actionRecord.setOnClickListener(lRecord);
          
          setListAdapter(new expressionsAdapter(ctx, R.layout.my_list_element, myExpressions));
         
@@ -112,6 +115,33 @@ public class MyList extends ListActivity {
 			return convertView;
 		}
 	}
+	
+	private View.OnClickListener lHome = new View.OnClickListener() {
+
+		@Override
+		public void onClick(View v) {
+			i = new Intent(context, DoYouSpeak.class);
+			startActivity(i);
+		}
+	};
+
+	private View.OnClickListener lList = new View.OnClickListener() {
+
+		@Override
+		public void onClick(View v) {
+			i = new Intent(context, MyList.class);
+			startActivity(i);
+		}
+	};
+
+	private View.OnClickListener lRecord = new View.OnClickListener() {
+
+		@Override
+		public void onClick(View v) {
+			i = new Intent(context, RecordExpression.class);
+			startActivity(i);
+		}
+	};
 	
 }
 

@@ -9,11 +9,7 @@
     android:clickable="true"
     >
 
-    <com.markupartist.android.widget.ActionBar
-        android:id="@+id/actionbar"
-        style="@style/ActionBar"
-        app:title="@string/app_name" 
-        />
+    <include layout="@layout/actionbar" />
 
     <Button
         android:id="@+id/my_localization"

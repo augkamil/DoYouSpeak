@@ -5,34 +5,35 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.GridView;
-
-import com.markupartist.android.widget.ActionBar;
-import com.markupartist.android.widget.ActionBar.Action;
-import com.markupartist.android.widget.ActionBar.IntentAction;
+import android.widget.ImageButton;
 
 
 public class DoYouSpeak extends Activity implements OnItemClickListener {
  
 	Context context;
+	ImageButton actionHome;
+	ImageButton actionList;
+	ImageButton actionRecord;
+	Intent i = null;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.dashboard);
         
         context = getApplicationContext();
-    
-        final ActionBar actionBar = (ActionBar) findViewById(R.id.actionbar);
-        actionBar.setHomeAction(new IntentAction(this, DoYouSpeak.createIntent(this), R.drawable.ic_action_home));
-        actionBar.setTitle(R.string.app_name);
-        final Action my_ListAction = new IntentAction(this, new Intent(this, MyList.class), R.drawable.ic_action_my_list);
-        actionBar.addAction(my_ListAction);
-        final Action recordAction = new IntentAction(this, new Intent(this, RecordExpression.class), R.drawable.ic_action_record);
-        actionBar.addAction(recordAction);
            
+        actionHome = (ImageButton)findViewById(R.id.actionHome);
+        actionList = (ImageButton)findViewById(R.id.actionMyList);
+        actionRecord = (ImageButton)findViewById(R.id.actionRecord);
+        
+        actionHome.setOnClickListener(lHome);
+        actionList.setOnClickListener(lList);
+        actionRecord.setOnClickListener(lRecord);
+        
         GridView gridview = (GridView) findViewById(R.id.dashboard_grid);
         gridview.setAdapter(new ImageAdapter(this));
 
@@ -76,5 +77,32 @@ public class DoYouSpeak extends Activity implements OnItemClickListener {
 		toast = Toast.makeText(this, ""+position, duration);
 		toast.show();*/
 	}
+	
+	private View.OnClickListener lHome = new View.OnClickListener() {
+
+		@Override
+		public void onClick(View v) {
+			i = new Intent(context, DoYouSpeak.class);
+			startActivity(i);
+		}
+	};
+
+	private View.OnClickListener lList = new View.OnClickListener() {
+
+		@Override
+		public void onClick(View v) {
+			i = new Intent(context, MyList.class);
+			startActivity(i);
+		}
+	};
+
+	private View.OnClickListener lRecord = new View.OnClickListener() {
+
+		@Override
+		public void onClick(View v) {
+			i = new Intent(context, RecordExpression.class);
+			startActivity(i);
+		}
+	};
 
 }

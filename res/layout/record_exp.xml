@@ -6,11 +6,7 @@
     android:background="@drawable/background_por"
     android:orientation="vertical" >
 
-    <com.markupartist.android.widget.ActionBar
-        android:id="@+id/actionbar"
-        style="@style/ActionBar"
-        app:title="@string/app_name" 
-        />
+    <include layout="@layout/actionbar" />
     
     <RelativeLayout
         android:id="@+id/recordBox"

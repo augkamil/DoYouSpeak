@@ -8,11 +8,7 @@
    android:background="@drawable/background_por"
    >
    
-   <com.markupartist.android.widget.ActionBar
-	    android:id="@+id/actionbar"
-	    app:title="@string/app_name"
-	    style="@style/ActionBar"
-        />
+   <include layout="@layout/actionbar" />
 
    
    <TextView

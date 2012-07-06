@@ -1,0 +1,36 @@
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout
+            android:id="@+id/actionbar"
+            android:layout_width="match_parent"
+            android:layout_height="45dp" 
+            android:background="@color/action_bar_color"
+            >
+            <ImageButton
+                android:id="@+id/actionHome"
+                android:src="@drawable/ic_action_home" 
+                android:layout_alignParentLeft="true"
+                style="@style/actionBar"
+                />
+            <ImageButton
+                android:id="@+id/actionRecord"
+                android:src="@drawable/ic_action_record"
+                android:layout_alignParentRight="true"
+                style="@style/actionBar"
+                />
+            <ImageButton
+                android:id="@+id/actionMyList"
+                android:src="@drawable/ic_action_my_list" 
+                android:layout_toLeftOf="@+id/actionRecord"
+                style="@style/actionBar" 
+                />
+            <TextView
+                android:id="@+id/actionTitle"
+                android:layout_toRightOf="@+id/actionHome"
+                android:layout_toLeftOf="@id/actionMyList"
+                android:text="Do You Speak?"
+                android:textSize="24dp"
+                android:gravity="center_vertical"
+                style="@style/actionBar"
+            	/>
+        </RelativeLayout>
+</merge>
