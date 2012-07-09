@@ -57,6 +57,7 @@ public class RecordExpression extends Activity implements OnItemSelectedListener
 	@Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        
         setContentView(R.layout.record_exp);
         
         context = getApplicationContext();
@@ -76,7 +77,6 @@ public class RecordExpression extends Activity implements OnItemSelectedListener
         
         recordButton = (ImageButton)findViewById(R.id.recordButton);
         recordPlayButton = (ImageButton)findViewById(R.id.recordPlayButton);
-        //chooseCategoryButton = (ImageButton)findViewById(R.id.chooseCategoryButton);
         setButton = (Button)findViewById(R.id.setButton);
         cancelButton = (Button)findViewById(R.id.cancelButton);
         editExpression = (EditText)findViewById(R.id.editExpression);
@@ -89,22 +89,8 @@ public class RecordExpression extends Activity implements OnItemSelectedListener
         
         recordButton.setOnClickListener(lRecordButton);
         recordPlayButton.setOnClickListener(lRecordPlayButton);
-        //chooseCategoryButton.setOnClickListener(lChooseCategoryButton);
         setButton.setOnClickListener(lSetButton);
         cancelButton.setOnClickListener(lCancelButton);
-
-        /*Button save=(Button)findViewById(R.id.setButton);  
-        save.setOnClickListener(onSave);*/
-        
-        /*model.insertCategory("Zakupy");
-        model.insertCategory("Jedzenie");
-        model.insertCategory("Czas");
-        model.insertCategory("Rodzina");
-        model.insertCategory("W hotelu");
-        model.insertCategory("Na dworcu");
-        model.insertCategory("Komunikacja");
-        model.insertCategory("Pytania");
-        model.insertCategory("Podoga");*/
         
         load();
         
@@ -113,6 +99,8 @@ public class RecordExpression extends Activity implements OnItemSelectedListener
         catSpinner.setAdapter(spinnerArrayAdapter);
         
         catSpinner.setOnItemSelectedListener(this);
+        
+        Log.d("Expressions", "Hello1");
 	}
 	
 	@Override
