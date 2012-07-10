@@ -44,7 +44,7 @@ public class RecordExpression extends Activity implements OnItemSelectedListener
 	int counter_record;
 	Cursor allRecords;
 	
-	String [] yourCategories = new String[9];
+	String [] yourCategories = new String[5];
 	
 	String expression;
 	int category;
@@ -60,8 +60,17 @@ public class RecordExpression extends Activity implements OnItemSelectedListener
         
         setContentView(R.layout.record_exp);
         
+        //deleteDatabase("venture.db");
+        //deleteDatabase("venture2.db");
+        
         context = getApplicationContext();
         model = new Model(context);
+        
+        /*model.insertCategory("Restauracja");
+        model.insertCategory("Dworzec");
+        model.insertCategory("W drodze");
+        model.insertCategory("Zdrowie");
+        model.insertCategory("Jedzenie");*/
         
         allRecords = model.getAllRecords();
         if(allRecords.getCount()==0)
@@ -92,7 +101,7 @@ public class RecordExpression extends Activity implements OnItemSelectedListener
         setButton.setOnClickListener(lSetButton);
         cancelButton.setOnClickListener(lCancelButton);
         
-        load();
+        loadCategories();
         
         Spinner catSpinner = (Spinner) findViewById(R.id.chooseCategorySpinner);
         ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, yourCategories);
@@ -147,8 +156,7 @@ public class RecordExpression extends Activity implements OnItemSelectedListener
 		public void onClick(View v) {
 			if(flagRecord==0) {
 				flagRecord = 1;	
-				recordText.setText("Nagrywanie...");
-				expression = editExpression.getText().toString();
+				recordText.setText("Nagrywanie...");	
 				counter_record++;
 				path = "/mnt/sdcard/doyouspeak/main/_"+counter_record+".3gp";
 				recorder = new AudioRecorder(path);
@@ -176,9 +184,9 @@ public class RecordExpression extends Activity implements OnItemSelectedListener
 
 		@Override
 		public void onClick(View v) {
-			Cursor c = model.getRecordById(""+id_tmp); // na razie jest na stałe id_tmp
+			/*Cursor c = model.getRecordById(""+id_tmp); // na razie jest na stałe id_tmp
 			c.moveToFirst();
-			String path = model.getPath(c);
+			String path = model.getPath(c);*/
 			
 			play(context, path);
 		}
@@ -189,6 +197,7 @@ public class RecordExpression extends Activity implements OnItemSelectedListener
 
 		@Override
 		public void onClick(View v) {
+			expression = editExpression.getText().toString();
 			id_tmp = model.insertRecord(expression, path, category); // na razie kategoria id 1
 			finish();
 		}
@@ -295,7 +304,7 @@ public class RecordExpression extends Activity implements OnItemSelectedListener
 		}
 	}
 	
-	public void load() {
+	public void loadCategories() {
 		Cursor c = model.getAllCategories();
 		int i = 0;
 		c.moveToFirst();

@@ -8,7 +8,7 @@ import android.database.sqlite.SQLiteDatabase;
 
 
 class Model extends SQLiteOpenHelper {
-	private static final String DATABASE_NAME="venture2.db";
+	private static final String DATABASE_NAME="venture.db";
 	private static final int SCHEMA_VERSION=1;
 
 	public Model(Context context) {
@@ -148,6 +148,11 @@ class Model extends SQLiteOpenHelper {
 		String[] args={id};
 		getWritableDatabase().delete("mylist", "_ID=?", args);
 	}
+	
+	public void deleteMyRecordIdRec(String id) {
+		String[] args={id};
+		getWritableDatabase().delete("mylist", "id_rec=?", args);
+	}
 
 
 	//RECORD TABLE
@@ -164,7 +169,7 @@ class Model extends SQLiteOpenHelper {
 	}
 
 	public Cursor getAllRecords() {
-	    return(getReadableDatabase().rawQuery("SELECT _id, text, path, id_cat FROM record", null));
+	    return(getReadableDatabase().rawQuery("SELECT * FROM record", null));
 	}
 
 	public Cursor getRecordById(String id) {		

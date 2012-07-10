@@ -67,8 +67,7 @@ public class ChooseCategory extends Activity {
          actionHome.setOnClickListener(lHome);
          actionList.setOnClickListener(lList);
          actionRecord.setOnClickListener(lRecord);
-            
-         load();
+
 
 
          
