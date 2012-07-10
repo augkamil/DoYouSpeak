@@ -1,119 +1,113 @@
 package com.doyouspeak;
 
+import java.io.IOException;
+import java.util.ArrayList;
+
+import com.doyouspeak.Expressions.ExpressionsAdapter;
+import com.doyouspeak.Expressions.RowModel;
+import com.doyouspeak.Expressions.ViewHolder;
+
 import android.app.ListActivity;
 import android.content.Context;
 import android.content.Intent;
+import android.database.Cursor;
+import android.media.MediaPlayer;
+import android.media.MediaPlayer.OnCompletionListener;
+import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
+import android.widget.ToggleButton;
 
 public class MyList extends ListActivity {
-	public final static String ID_EXTRA="";
+
+	Context context;
 	ImageButton actionHome;
 	ImageButton actionList;
 	ImageButton actionRecord;
 	Intent i = null;
-
-	Context context;
+	Model model;
+	Cursor expressions;
+	Cursor myExpressions;
+	int myExpressionsCount;
+	ArrayList<RowModel> list;
+	MediaPlayer mp;
+	int[] myIds;
+	
 	
 	@Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.my_list);
-        
-        String[] myExpressions={"Teraz napiszę bardzo długi tekst, co Ty na to?", "ipsum", "dolor",
-        		"sit", "amet",
-        		"consectetuer", "adipiscing", "elit", "morbi", "vel",
-        		"ligula", "vitae", "arcu", "aliquet", "mollis",
-        		"etiam", "vel", "erat", "placerat", "ante",
-        		"porttitor", "sodales", "pellentesque", "augue", "purus"};
-            
-         Context ctx = getApplicationContext(); 
-         context = getApplicationContext();
-         
-         actionHome = (ImageButton)findViewById(R.id.actionHome);
-         actionList = (ImageButton)findViewById(R.id.actionMyList);
-         actionRecord = (ImageButton)findViewById(R.id.actionRecord);
-         
-         actionHome.setOnClickListener(lHome);
-         actionList.setOnClickListener(lList);
-         actionRecord.setOnClickListener(lRecord);
-         
-         setListAdapter(new expressionsAdapter(ctx, R.layout.my_list_element, myExpressions));
-        
-         
-         ListView lv = getListView();
-         // listening to single list item on click
-         lv.setOnItemClickListener(new OnItemClickListener() {
-           public void onItemClick(AdapterView<?> parent, View view,
-               int position, long id) {
-  
-               // selected item
-               String exp = ((TextView) view).getText().toString();
-  
-               // Launching new Activity on selecting single List Item
-               Intent i = new Intent(MyList.this, MyListElement.class);
-               // sending data to new activity
-               i.putExtra("exp_item", exp);
-               startActivity(i);
-
-           }
-         });
-
-
-         
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.my_list);
+		
+		context = getApplicationContext();
+        model = new Model(context);
+      
+        actionHome = (ImageButton)findViewById(R.id.actionHome);
+	    actionList = (ImageButton)findViewById(R.id.actionMyList);
+	    actionRecord = (ImageButton)findViewById(R.id.actionRecord);
+	     
+	    actionHome.setOnClickListener(lHome);
+	    actionList.setOnClickListener(lList);
+	    actionRecord.setOnClickListener(lRecord);
+	    
+	    list = new ArrayList<RowModel>();
+	    
+	    expressions = model.getAllRecords();
+	    myExpressions = model.getAllMyRecords();
+	    
+	    loadFromDatabase();
+	    
+	    setListAdapter(new ExpressionsAdapter(list));
 	}
 	
-	class expressionsAdapter extends ArrayAdapter<String> {
+	@Override
+	protected void onDestroy() {
+		super.onDestroy();
+		model.close();
+	}
 
-		private LayoutInflater mInflater;
-		
-		private String[] mStrings;
-		
-		private int mViewResourceId;
-		
-		public expressionsAdapter(Context ctx, int viewResourceId, String[] strings) {
-			super(ctx, viewResourceId, strings);
+	public void loadFromDatabase() {
+		myExpressionsCount = myExpressions.getCount();
+		myIds = new int[myExpressionsCount];
+		    
+		int i = 0;
+		myExpressions.moveToFirst();
+		while(!myExpressions.isAfterLast()) {
+			myIds[i] = myExpressions.getInt(1);
+		    myExpressions.moveToNext();
+			i++;
+		}    
+		    
+		i = 0;
+		expressions.moveToFirst();
+		while(!expressions.isAfterLast()) {
 			
-			mInflater = (LayoutInflater)ctx.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+			if(isFavourite(expressions.getInt(0))) {
+				list.add(new RowModel(model.getText(expressions), true, expressions.getInt(0)));
+			}
 			
-			mStrings = strings;
-			
-			mViewResourceId = viewResourceId;
-
+			expressions.moveToNext();
+			i++;
 		}
-
-		@Override
-		public int getCount() {
-			return mStrings.length;
+	}
+	
+	public boolean isFavourite(int id_rec) {
+		for(int i=0;i<myExpressionsCount;i++) {
+			if(myIds[i]==id_rec)
+				return true;
 		}
-
-		@Override
-		public String getItem(int position) {
-			return mStrings[position];
-		}
-
-		@Override
-		public long getItemId(int position) {
-			return 0;
-		}
-
-		@Override
-		public View getView(int position, View convertView, ViewGroup parent) {
-			convertView = mInflater.inflate(mViewResourceId, null);
-			
-			TextView tv = (TextView)convertView.findViewById(R.id.my_list_item);
-			tv.setText(mStrings[position]);
-			
-			return convertView;
-		}
+		return false;
 	}
 	
 	private View.OnClickListener lHome = new View.OnClickListener() {
@@ -143,8 +137,126 @@ public class MyList extends ListActivity {
 		}
 	};
 	
+	public void play(Context context, String path) {
+
+		String newPath = "file://"+path;
+		Log.d("PATH", newPath);
+		mp = MediaPlayer.create(context, Uri.parse(newPath));
+		try {
+			mp.prepare();
+		} catch (IllegalStateException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		mp.start();
+		mp.setOnCompletionListener(new OnCompletionListener() {
+			@Override
+			public void onCompletion(MediaPlayer mp) {
+				if (mp.isPlaying()) {
+					mp.stop();
+				}
+			}
+	   });
+	}
+	
+	class RowModel {
+		String expression;
+		boolean checked;
+		int id_rec;
+		
+		RowModel(String expression, boolean checked, int id_rec) {
+			this.expression = expression;
+			this.checked = checked;
+			this.id_rec = id_rec;
+		}
+	}
+	
+	class ViewHolder {
+		ImageButton btChecked = null;
+		ImageButton playButton = null;
+		
+		ViewHolder(View base) {
+			this.btChecked = (ImageButton)base.findViewById(R.id.star_on_button);
+			this.playButton = (ImageButton)base.findViewById(R.id.play_button);
+		}
+	}
+	
+	private RowModel getModel(int position) {
+		return (((ExpressionsAdapter)getListAdapter()).getItem(position));
+	}
+	
+	class ExpressionsAdapter extends ArrayAdapter<RowModel> {
+
+		public ExpressionsAdapter(ArrayList<RowModel> list) {
+			super(MyList.this, R.layout.my_list_element, R.id.my_list_item, list);
+		}
+
+		@Override
+		public View getView(int position, View convertView, ViewGroup parent) {
+			View row = super.getView(position, convertView, parent);
+			ViewHolder holder = (ViewHolder)row.getTag();
+			final int pos = position;
+			
+			final RowModel rModel = getModel(pos);
+			TextView expressionsElement = (TextView)row.findViewById(R.id.my_list_item);
+			expressionsElement.setText(rModel.expression);
+			
+			if(holder==null) {
+				holder = new ViewHolder(row);
+				row.setTag(holder);
+				
+				row.setOnClickListener(new OnClickListener() {
+
+					@Override
+					public void onClick(View v) {
+						i = new Intent(MyList.this, Details.class);
+						i.putExtra("id_rec", rModel.id_rec);
+						i.putExtra("checked", rModel.checked);
+						startActivity(i);
+					}
+					
+				});
+				
+				holder.btChecked.setOnClickListener(new OnClickListener() {
+
+					@Override
+					public void onClick(View v) {
+						Integer myPosition = (Integer)v.getTag();
+						RowModel rModel = getModel(myPosition);
+						
+						model.deleteMyRecordIdRec(""+rModel.id_rec);	
+						onCreate(null);
+					}
+					
+				});
+				
+				holder.playButton.setOnClickListener(new OnClickListener() {
+
+					@Override
+					public void onClick(View v) {
+						Integer myPosition = (Integer)v.getTag();
+						RowModel rModel = getModel(myPosition);
+						
+						Cursor c = model.getRecordById(""+rModel.id_rec);
+						c.moveToFirst();
+						play(context, model.getPath(c));		
+					}
+					
+				});
+				
+			}
+			
+			RowModel model = getModel(position);
+			holder.btChecked.setTag(new Integer(position));
+			holder.playButton.setTag(new Integer(position));
+			
+			return row;
+		}
+		
+		
+		
+	}
+
 }
-
-
-
 

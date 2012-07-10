@@ -34,6 +34,7 @@
         <activity android:name="Reminder"></activity>
         <activity android:name="MyListElement"></activity>
         <activity android:name="ChooseCategory"></activity>
+        <activity android:name="Details"></activity>
     </application>
 
 </manifest>

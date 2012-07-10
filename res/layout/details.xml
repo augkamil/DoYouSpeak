@@ -23,7 +23,7 @@
         android:paddingTop="5.0dip" >
 
         <ToggleButton
-            android:id="@+id/favoriteButton"
+            android:id="@+id/detailsFavouriteButton"
             android:layout_width="wrap_content"
             android:layout_height="fill_parent"
             android:background="@android:color/transparent"
@@ -33,7 +33,7 @@
             android:textOn="@string/star_on" />
 
         <TextView
-            android:id="@+id/expression"
+            android:id="@+id/detailsExpression"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/favorite"

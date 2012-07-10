@@ -69,6 +69,12 @@ public class Expressions extends ListActivity {
 	    setListAdapter(new ExpressionsAdapter(list));
 	}
 	
+	@Override
+	protected void onDestroy() {
+		super.onDestroy();
+		model.close();
+	}
+
 	public void loadFromDatabase() {
 		myExpressionsCount = myExpressions.getCount();
 		myIds = new int[myExpressionsCount];
@@ -145,7 +151,6 @@ public class Expressions extends ListActivity {
 	
 	class ViewHolder {
 		ToggleButton btChecked = null;
-		//TextView 
 		
 		ViewHolder(View base) {
 			this.btChecked = (ToggleButton)base.findViewById(R.id.favouriteButton);
@@ -166,6 +171,11 @@ public class Expressions extends ListActivity {
 		public View getView(int position, View convertView, ViewGroup parent) {
 			View row = super.getView(position, convertView, parent);
 			ViewHolder holder = (ViewHolder)row.getTag();
+			final int pos = position;
+			
+			final RowModel rModel = getModel(pos);
+			TextView expressionsElement = (TextView)row.findViewById(R.id.expressionsElement);
+			expressionsElement.setText(rModel.expression);
 			
 			if(holder==null) {
 				holder = new ViewHolder(row);
@@ -175,9 +185,10 @@ public class Expressions extends ListActivity {
 
 					@Override
 					public void onClick(View v) {
-						//Integer myPosition = (Integer)v.getTag();
-						Log.d("pos", "878");
-						
+						i = new Intent(Expressions.this, Details.class);
+						i.putExtra("id_rec", rModel.id_rec);
+						i.putExtra("checked", rModel.checked);
+						startActivity(i);
 					}
 					
 				});
@@ -197,29 +208,11 @@ public class Expressions extends ListActivity {
 						}
 						
 						rModel.checked = ((ToggleButton)v).isChecked();
-						RelativeLayout parent = (RelativeLayout)v.getParent();
-						TextView expressionsElement = (TextView)parent.findViewById(R.id.expressionsElement);
-						expressionsElement.setText(rModel.expression);
+						
 					}
 					
 				});
 				
-				/*holder.btChecked.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-
-					@Override
-					public void onCheckedChanged(CompoundButton btChecked, boolean isChecked) {
-						
-						Integer myPosition = (Integer)btChecked.getTag();
-						RowModel model = getModel(myPosition);
-						model.checked = isChecked;
-						Log.d("isChecked", ""+isChecked);
-						Log.d("myPosition", ""+myPosition);
-						
-						RelativeLayout parent = (RelativeLayout)btChecked.getParent();
-						TextView expressionsElement = (TextView)parent.findViewById(R.id.expressionsElement);
-						expressionsElement.setText(model.expression);
-					}	
-				});*/
 			}
 			
 			RowModel model = getModel(position);

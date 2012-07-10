@@ -59,14 +59,12 @@ public class RecordExpression extends Activity implements OnItemSelectedListener
         super.onCreate(savedInstanceState);
         
         setContentView(R.layout.record_exp);
-        
-        //deleteDatabase("venture.db");
-        //deleteDatabase("venture2.db");
-        
+      
         context = getApplicationContext();
         model = new Model(context);
         
-        /*model.insertCategory("Restauracja");
+        /*deleteDatabase("venture.db");
+        model.insertCategory("Restauracja");
         model.insertCategory("Dworzec");
         model.insertCategory("W drodze");
         model.insertCategory("Zdrowie");
