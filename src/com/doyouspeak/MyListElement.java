@@ -12,13 +12,13 @@ public class MyListElement extends Activity {
 	    super.onCreate(savedInstanceState);
 	    setContentView(R.layout.details);
 	    
-	    TextView txtExp = (TextView) findViewById(R.id.my_list_item);
+	    //TextView txtExp = (TextView) findViewById(R.id.my_list_item);
 	 
-	    Intent i = getIntent();
+	    //Intent i = getIntent();
 	    // getting attached intent data
-	    String exp = i.getStringExtra("exp_item");
+	   // String exp = i.getStringExtra("exp_item");
 	    // displaying selected product name
-	    txtExp.setText(exp);
+	    //txtExp.setText(exp);
 	  
 	}
 		

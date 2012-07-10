@@ -11,13 +11,13 @@
         android:layout_alignParentLeft="true"
         android:layout_centerVertical="true"
         android:layout_marginLeft="10dip"
-        android:layout_toLeftOf="@+id/favoriteButton"
+        android:layout_toLeftOf="@+id/favouriteButton"
         android:text="TextView"
         android:textAppearance="?android:textAppearanceMedium"
         android:textColor="@color/font_color" />
-    
+
     <ToggleButton
-            android:id="@+id/favoriteButton"
+            android:id="@+id/favouriteButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@android:color/transparent"
@@ -27,5 +27,14 @@
         	android:layout_centerVertical="true"
             android:textOff="@string/star_off"
             android:textOn="@string/star_on" />
+    
+    <!--  <ImageButton
+        android:id="@+id/favouriteButton"
+        android:background="@android:color/transparent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/ic_star_off" />-->
 
 </RelativeLayout>
