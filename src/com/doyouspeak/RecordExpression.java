@@ -70,7 +70,8 @@ public class RecordExpression extends Activity implements OnItemSelectedListener
         model.insertCategory("Dworzec");
         model.insertCategory("W drodze");
         model.insertCategory("Zdrowie");
-        model.insertCategory("Jedzenie");*/
+        model.insertCategory("Jedzenie");
+        */
         
         allRecords = model.getAllRecords();
         if(allRecords.getCount()==0)
@@ -101,9 +102,9 @@ public class RecordExpression extends Activity implements OnItemSelectedListener
         setButton.setOnClickListener(lSetButton);
         cancelButton.setOnClickListener(lCancelButton);
         
-        //loadCategories();
-        res = getResources();
-        yourCategories = res.getStringArray(R.array.categories);
+        loadCategories();
+        //res = getResources();
+        //yourCategories = res.getStringArray(R.array.categories);
         
         Spinner catSpinner = (Spinner) findViewById(R.id.chooseCategorySpinner);
         ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<String>(this, R.layout.spinner_dropdown_first_item	, yourCategories);

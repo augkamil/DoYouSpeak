@@ -100,7 +100,7 @@ public class Details extends Activity {
         favouriteButton.setChecked(checked);
         
         parentActivity=getIntent().getStringExtra("parentActivity");
-
+        
         //ustawianie widoczności elementów według tego jaka Activity wywołała tą
         if(parentActivity.equals("Expressions")){
         	next_img.setVisibility(View.INVISIBLE);

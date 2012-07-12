@@ -28,29 +28,17 @@
             <requestFocus />
         </EditText>
         
-        <Spinner
-        	android:id="@+id/chooseCategorySpinner"
-	        android:layout_width="fill_parent"
-	        android:layout_height="wrap_content"
-	        android:layout_alignParentLeft="true"
-            android:layout_below="@+id/editExpression"
-	        android:background="@android:color/transparent"
-	        android:popupBackground="@color/background_color"
-	        android:visibility="visible"
-	        android:prompt="@string/choose_category_text" 
-	        android:clickable="true" android:paddingLeft="15dip"/>
-        
         <TextView
             android:id="@+id/recordText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
-            android:text="@string/record_text"
-            android:textColor="@color/font_color"
-            android:textAppearance="?android:textAppearanceMedium"
+            android:layout_below="@+id/editExpression"
+            android:layout_toLeftOf="@+id/recordButton"
             android:padding="15dip"
-            android:layout_below="@+id/chooseCategorySpinner"
-            />
+            android:text="@string/record_text"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="@color/font_color" />
 
         <ImageButton
             android:id="@+id/recordButton"
@@ -60,8 +48,8 @@
             android:background="@android:color/transparent"
             android:src="@drawable/ic_action_record" 
             android:layout_alignBottom="@+id/recordText"
-            android:layout_below="@+id/chooseCategorySpinner"
-            android:paddingRight="15dip"/>
+            android:layout_below="@+id/editExpression"
+            android:paddingRight="15dip" android:layout_centerVertical="true"/>
 
         <TextView
             android:id="@+id/recordPlayText"
@@ -69,10 +57,11 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_below="@+id/recordText"
+            android:layout_toLeftOf="@+id/recordPlayButton"
+            android:padding="15dip"
             android:text="@string/record_play_text"
-            android:textColor="@color/font_color"
-            android:textAppearance="?android:textAppearanceMedium" 
-            android:padding="15dip"/>
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="@color/font_color" />
 
         <ImageButton
             android:id="@+id/recordPlayButton"
@@ -82,9 +71,32 @@
             android:layout_alignParentRight="true"
             android:layout_below="@+id/recordButton"
             android:background="@android:color/transparent"
-            android:src="@drawable/ic_play_small" android:paddingRight="15dip"/>
+            android:src="@drawable/ic_play_small" android:paddingRight="15dip" android:layout_centerVertical="true"/>
 
-
+        <TextView
+            android:id="@+id/chooseCategoryText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/recordPlayText"
+            android:layout_toLeftOf="@+id/recordPlayButton"
+            android:padding="15dip"
+            android:text="@string/choose_category_text"
+            android:textAppearance="?android:textAppearanceSmall"
+            android:textColor="@color/font_color" />
+        
+		<Spinner
+        	android:id="@+id/chooseCategorySpinner"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentLeft="true"
+            android:layout_below="@+id/chooseCategoryText"
+	        android:background="@android:color/transparent"
+	        android:popupBackground="@color/background_color"
+	        android:visibility="visible"
+	        android:prompt="@string/choose_category_text" 
+	        android:clickable="true" android:paddingLeft="15dip"/>
+        
         <LinearLayout
 	        android:id="@+id/confirmButtons"
 	        android:orientation="horizontal"
@@ -95,7 +107,7 @@
 	        android:paddingBottom="1.0dip"
 	        android:layout_width="fill_parent" 
 	        android:layout_height="wrap_content"
-	        android:layout_below="@+id/recordPlayText"
+	        android:layout_below="@+id/chooseCategorySpinner"
 	        >
         
 	        <Button

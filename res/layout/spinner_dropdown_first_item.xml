@@ -5,9 +5,7 @@
         android:layout_height="wrap_content"
         android:text="CheckedTextView" 
         android:background="@color/background_color" 
-        android:paddingLeft="15dip" 
         android:textColor="@color/white" 
-        android:padding="4dip" 
-        android:drawableRight="@drawable/ic_action_my_list" 
-        android:textAppearance="?android:textAppearanceMedium" android:paddingRight="15dip" android:layout_marginRight="15dip"/>
+        android:drawableRight="@drawable/ic_expressions_small" 
+        android:textAppearance="?android:textAppearanceMedium" android:paddingRight="15dip" android:layout_marginRight="15dip" android:gravity="center_vertical" android:layout_marginLeft="15dip"/>
 

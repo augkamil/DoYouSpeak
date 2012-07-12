@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="categories">
-        <item>Ajmara</item>
-		<item>Albański</item>
-		<item>Amharski</item>
-		<item>Angielski </item>
-		<item>Angielski amerykański</item>
+        <item>Restauracja</item>
+		<item>Dworzec</item>
+		<item>W drodze</item>
+		<item>Zdrowie</item>
+		<item>Jedzenie</item>
     </string-array>
 </resources>

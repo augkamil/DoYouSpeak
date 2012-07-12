@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CheckedTextView;
 import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -16,6 +17,7 @@ import android.util.Log;
 public class Localization extends Activity {
     TextView locTxtV;//TextView with writen localization
     TextView locWrite;//AutoCompleteTextView
+    CheckedTextView spinnerText;
     ImageButton actionHome;
 	ImageButton actionList;
 	ImageButton actionRecord;
@@ -48,6 +50,9 @@ public class Localization extends Activity {
         
         locTxtV = (TextView) findViewById(R.id.your_localization);
         locWrite = (TextView) findViewById(R.id.writing_localization);
+        spinnerText = (CheckedTextView) findViewById(R.id.checkedTextView1);
+        //R.string.choose_languages
+        spinnerText.setText("TEST");
         
         Button locButton = (Button) findViewById(R.id.my_localization);
         locButton.setOnClickListener(new View.OnClickListener() {
