@@ -14,7 +14,7 @@
     <string name="star_on"></string>
     <string name="star_off"></string>
     <string name="my_localization">Moja lokalizacja</string>
-    <string name="choose_localization">Wybierz Lokalizację</string>
+    <string name="choose_localization">Wpisz lokalizację</string>
     <string name="writing_localization">Kraj, region</string>
     <string name="expressionCategory">Kategoria</string>
     <string name="record_text">Nagraj Siebie</string>
@@ -43,5 +43,6 @@
     <string name="categorys_text">Kategorie zwrotów:</string>
     <string name="search_hint">Wyszukaj kategorię lub zwrot </string>
     <string name="choose_category_list">Wybierz kategorię</string>
+    <string name="choose_language">Wybierz język</string>
 
 </resources>

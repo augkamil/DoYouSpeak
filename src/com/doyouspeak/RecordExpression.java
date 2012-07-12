@@ -5,6 +5,7 @@ import java.io.IOException;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.database.Cursor;
 import android.media.MediaPlayer;
 import android.net.Uri;
@@ -39,6 +40,7 @@ public class RecordExpression extends Activity implements OnItemSelectedListener
 	int flagPlay = 0;
 	
 	Context context;
+	Resources res;
 	
 	long id_tmp;
 	int counter_record;
@@ -99,10 +101,13 @@ public class RecordExpression extends Activity implements OnItemSelectedListener
         setButton.setOnClickListener(lSetButton);
         cancelButton.setOnClickListener(lCancelButton);
         
-        loadCategories();
+        //loadCategories();
+        res = getResources();
+        yourCategories = res.getStringArray(R.array.categories);
         
         Spinner catSpinner = (Spinner) findViewById(R.id.chooseCategorySpinner);
-        ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, yourCategories);
+        ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<String>(this, R.layout.spinner_dropdown_first_item	, yourCategories);
+        spinnerArrayAdapter.setDropDownViewResource(R.layout.spinner_dropdown_item);
         catSpinner.setAdapter(spinnerArrayAdapter);
         
         catSpinner.setOnItemSelectedListener(this);

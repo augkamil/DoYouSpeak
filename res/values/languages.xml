@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="languages">
+        <item>Ajmara</item>
+		<item>Albański</item>
+		<item>Amharski</item>
+		<item>Angielski </item>
+		<item>Angielski amerykański</item>
+		<item>Angielski australijski</item>
+		<item>Arabski</item>
+		<item>Asamski </item>
+		<item>Azerbejdżański</item>
+		<item>Baluchi</item>
+		<item>Baskijski </item>
+		<item>Baszkirski</item>
+		<item>Bengalski</item>
+		<item>Białoruski </item>
+		<item>Birmański</item>
+		<item>Bislama</item>
+		<item>Bośniacki</item>
+		<item>Bretoński</item>
+		<item>Bułgarski</item>
+		<item>Cebuano </item>
+		<item>Cham</item>
+		<item>Chiński</item>
+		<item>Chorwacki </item>
+		<item>Cree</item>
+		<item>Czeczeński</item>
+		<item>Czeski</item>
+		<item>Czuwaski</item>
+		<item>Dakota</item>
+		<item>Damara</item>
+		<item>Dari</item>
+		<item>Dayak</item>
+		<item>Dinka</item>
+		<item>Duński</item>
+		<item>Dzongkha</item>
+		<item>Esperanto</item>
+		<item>Estoński</item>
+		<item>Fang</item>
+		<item>Fidżyjski</item>
+		<item>Fiński</item>
+		<item>Flamandzki</item>
+		<item>Francuski</item>
+		<item>Fryzyjski</item>
+		<item>Gaelic</item>
+		<item>Galisyjski</item>
+		<item>Ganda</item>
+		<item>Grecki</item>
+		<item>Grecki (starożytny)</item>
+		<item>Gruziński </item>
+		<item>Guarani</item>
+		<item>Gudźarati</item>
+		<item>Haitański</item>
+		<item>Hausa</item>
+		<item>Hebrajski </item>
+		<item>Herero</item>
+		<item>Hindi</item>
+		<item>Hiszpański</item>
+		<item>Hmong</item>
+		<item>Igbo</item>
+		<item>Indonezyjski</item>
+		<item>Irlandzki</item>
+		<item>Islandzki</item>
+		<item>Japoński</item>
+		<item>Jawajski</item>
+		<item>Jidysz </item>
+		<item>Kabyle</item>
+		<item>Kadazan</item>
+		<item>Kannada</item>
+		<item>Karen</item>
+		<item>Kaszmirski</item>
+		<item>Kataloński</item>
+		<item>Kazachski</item>
+		<item>Keczua</item>
+		<item>Khmerski</item>
+		<item>Kirgiski</item>
+		<item>Kongo</item>
+		<item>Koreański</item>
+		<item>Kurdyjski</item>
+		<item>Laotański</item>
+		<item>Litewski</item>
+		<item>Luksemburski</item>
+		<item>Lunda</item>
+		<item>Łacina</item>
+		<item>Łotewski</item>
+		<item>Macedoński</item>
+		<item>Maithili</item>
+		<item>Malagasy</item>
+		<item>Malajski </item>
+		<item>Malayalam</item>
+		<item>Maltański</item>
+		<item>Maori</item>
+		<item>Marathi</item>
+		<item>Masai</item>
+		<item>Mbundu</item>
+		<item>Mołdawski</item>
+		<item>Mongolski</item>
+		<item>Ndebele (południowy)</item>
+		<item>Ndebele (północny)</item>
+		<item>Nepalski</item>
+		<item>Newari</item>
+		<item>Niderlandzki</item>
+		<item>Niemiecki</item>
+		<item>Nigerian</item>
+		<item>Norweski</item>
+		<item>Oriya</item>
+		<item>Ormiański </item>
+		<item>Paszto</item>
+		<item>Pendżabski</item>
+		<item>Perski</item>
+		<item>Polski</item>
+		<item>Portugalski</item>
+		<item>Prowansalski</item>
+		<item>Rosyjski</item>
+		<item>Rumuński </item>
+		<item>Samoański</item>
+		<item>Serbski</item>
+		<item>Shan</item>
+		<item>Shona</item>
+		<item>Sindhi</item>
+		<item>Sino-tibetan</item>
+		<item>Siswati (Swazi)</item>
+		<item>Słowacki</item>
+		<item>Słoweński</item>
+		<item>Somalijski</item>
+		<item>Suahili </item>
+		<item>Susu</item>
+		<item>Syngaleski</item>
+		<item>Szwedzki</item>
+		<item>Tagalski</item>
+		<item>Tajik</item>
+		<item>Tajski</item>
+		<item>Tamilski</item>
+		<item>Tatarski</item>
+		<item>Telugu</item>
+		<item>Tongański</item>
+		<item>Tsonga</item>
+		<item>Tswana</item>
+		<item>Turecki</item>
+		<item>Turkmeński</item>
+		<item>Tybetański</item>
+		<item>Ukraiński</item>
+		<item>Urdu</item>
+		<item>Uzbecki</item>
+		<item>Venda</item>
+		<item>Walijski </item>
+		<item>Węgierski</item>
+		<item>Wietnamski</item>
+		<item>Włoski</item>
+		<item>Xhosa</item>
+		<item>Yoruba</item>
+		<item>Zhuang (chuang)</item>
+		<item>Zulu</item>
+    </string-array>
+</resources>

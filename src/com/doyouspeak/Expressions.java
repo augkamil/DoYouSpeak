@@ -188,6 +188,7 @@ public class Expressions extends ListActivity {
 						i = new Intent(Expressions.this, Details.class);
 						i.putExtra("id_rec", rModel.id_rec);
 						i.putExtra("checked", rModel.checked);
+						i.putExtra("parentActivity", "Expressions");
 						startActivity(i);
 					}
 					

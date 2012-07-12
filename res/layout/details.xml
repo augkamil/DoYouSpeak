@@ -25,12 +25,12 @@
         <ToggleButton
             android:id="@+id/detailsFavouriteButton"
             android:layout_width="wrap_content"
-            android:layout_height="fill_parent"
+            android:layout_height="wrap_content"
             android:background="@android:color/transparent"
             android:drawableBottom="@drawable/favorite_button"
             android:gravity="center"
             android:textOff="@string/star_off"
-            android:textOn="@string/star_on" />
+            android:textOn="@string/star_on" android:layout_gravity="center"/>
 
         <TextView
             android:id="@+id/detailsExpression"
@@ -151,7 +151,7 @@
         android:contentDescription="@string/next_text"
         android:scaleType="fitCenter"
         android:src="@drawable/ic_next"
-        android:visibility="visible" android:paddingRight="15dip"/>
+        android:paddingRight="15dip"/>
 
     <ImageButton
         android:id="@+id/previous_img"
@@ -163,6 +163,6 @@
         android:contentDescription="@string/previous_text"
         android:scaleType="fitCenter"
         android:src="@drawable/ic_previous"
-        android:visibility="visible" android:paddingLeft="15dip"/>
+        android:paddingLeft="15dip"/>
 
 </RelativeLayout>

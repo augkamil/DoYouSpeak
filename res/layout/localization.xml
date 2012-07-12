@@ -64,14 +64,27 @@
         android:visibility="invisible"
         android:textStyle="bold"
         />
-
+    
+    <TextView
+        android:id="@+id/choose_language"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/writing_localization"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:gravity="center_vertical"
+        android:text="@string/choose_language"
+        android:textAppearance="?android:attr/textAppearanceLarge" 
+        android:textColor="@color/font_color"
+        />
+    
     <Spinner
         android:id="@+id/choose_languages"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/writing_localization"
         android:layout_alignRight="@+id/writing_localization"
-        android:layout_below="@+id/writing_localization"
+        android:layout_below="@+id/choose_language"
         android:layout_marginTop="10dp"
         android:background="@android:color/transparent"
         android:popupBackground="@color/background_color"

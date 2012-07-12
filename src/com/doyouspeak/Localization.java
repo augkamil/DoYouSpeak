@@ -3,6 +3,7 @@ package com.doyouspeak;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -10,6 +11,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.util.Log;
 
 public class Localization extends Activity {
     TextView locTxtV;//TextView with writen localization
@@ -20,17 +22,19 @@ public class Localization extends Activity {
 	Intent i = null;
 	Context context;
 	
-	private static final String[] yourLocalizations={"Język", "ipsum", "dolor",
-		"sit", "amet",
-		"consectetuer", "adipiscing", "elit", "morbi", "vel",
-		"ligula", "vitae", "arcu", "aliquet", "mollis",
-		"etiam", "vel", "erat", "placerat", "ante",
-		"porttitor", "sodales", "pellentesque", "augue", "purus"};
+	Resources res;
+	String[] languages;
+	
+	
 	
 	@Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.localization);
+        
+        //pobieranie listy języków z pliku xml
+        res = getResources();
+    	languages = res.getStringArray(R.array.languages);
 
         context = getApplicationContext();
         
@@ -54,7 +58,8 @@ public class Localization extends Activity {
         });
         
         Spinner langSpinner = (Spinner) findViewById(R.id.choose_languages);
-        ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, yourLocalizations);
+        ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<String>(this, R.layout.spinner_dropdown_first_item, languages);
+        spinnerArrayAdapter.setDropDownViewResource(R.layout.spinner_dropdown_item);
         langSpinner.setAdapter(spinnerArrayAdapter);
         
 	}

@@ -1,0 +1,13 @@
+
+    <CheckedTextView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/checkedTextView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="CheckedTextView" 
+        android:background="@color/background_color" 
+        android:paddingLeft="15dip" 
+        android:textColor="@color/white" 
+        android:padding="4dip" 
+        android:drawableRight="@drawable/ic_action_my_list" 
+        android:textAppearance="?android:textAppearanceMedium" android:paddingRight="15dip" android:layout_marginRight="15dip"/>
+

@@ -46,6 +46,7 @@ public class Details extends Activity {
 	Model model;
 	MediaPlayer mp;
 	AudioRecorder recorder;
+	String parentActivity;
 	
 	boolean record = false;
 	boolean play = false;
@@ -60,7 +61,7 @@ public class Details extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.details);
-        
+  
         context = getApplicationContext();
         model = new Model(context);
         
@@ -91,12 +92,27 @@ public class Details extends Activity {
         historyButton3.setOnClickListener(lHistoryButton3);
         next_img.setOnClickListener(lNext_img);
         previous_img.setOnClickListener(lPrevious_img);
-          
+        
         
         id_rec = getIntent().getIntExtra("id_rec", 0);
         checked = getIntent().getBooleanExtra("checked", false);
         
         favouriteButton.setChecked(checked);
+        
+        parentActivity=getIntent().getStringExtra("parentActivity");
+
+        //ustawianie widoczności elementów według tego jaka Activity wywołała tą
+        if(parentActivity.equals("Expressions")){
+        	next_img.setVisibility(View.INVISIBLE);
+        	previous_img.setVisibility(View.INVISIBLE);
+        }
+        else if(parentActivity.equals("MyList")){
+        	next_img.setVisibility(View.VISIBLE);
+        	previous_img.setVisibility(View.VISIBLE);
+        }
+        else{
+        	
+        }    
         
         exp = model.getRecordById(""+id_rec);
         exp.moveToFirst();
